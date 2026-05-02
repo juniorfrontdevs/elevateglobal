@@ -1,0 +1,873 @@
+:root{--bg:#000;--panel:#171d20;--card:#000;--text:#fff;--muted:#9fa6b3;--field:#000;--border:rgba(255,255,255,.22);--blue:#007bff;--container:1020px;--header-h:64px}
+body.light{--bg:#fff;--panel:#f5f7fa;--card:#fff;--text:#10141b;--muted:#5d6674;--field:#fff;--border:rgba(0,0,0,.22)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{min-height:100vh;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:"Lexend","Outfit",Arial,sans-serif;font-weight:500;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}img{display:block;max-width:100%;height:auto}.container{width:min(var(--container),calc(100% - 48px));margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:1000;height:var(--header-h);background:#000;color:#fff}.nav-inner{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:34px}.brand{display:inline-flex;align-items:center;gap:10px;min-width:166px}.brand-cube{width:38px;height:43px;display:grid;gap:3px}.brand-cube span{height:11px;border-radius:3px;transform:skewY(-28deg);background:linear-gradient(135deg,#18b9ff 0%,#087dff 52%,#004dbb 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),0 0 8px rgba(0,123,255,.25)}.brand-text{color:#fff;font-size:16px;font-weight:800;line-height:1.05;letter-spacing:-.35px}.brand-text b{color:var(--blue)}
+.main-nav{display:flex;align-items:center;gap:38px;color:#fff;font-size:14px;font-weight:700}.main-nav a:hover,.main-nav a.active{color:#fff}.nav-actions{display:flex;align-items:center;gap:18px;color:#fff;font-size:14px;font-weight:700}.language{display:inline-flex;align-items:center;gap:8px}.usa-flag{position:relative;width:28px;height:18px;display:inline-block;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.35);background:repeating-linear-gradient(to bottom,#b22234 0 1.38px,#fff 1.38px 2.76px)}.flag-union{position:absolute;left:0;top:0;width:12.5px;height:9.7px;background:#3c3b6e}.flag-union::before{content:"* *";position:absolute;left:1px;top:-1px;color:#fff;font-size:4px;line-height:4px;letter-spacing:.4px;text-shadow:4px 4px #fff,0 4px #fff}.signup-btn{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:78px;padding:0 18px;border-radius:6px;background:var(--blue);color:#fff;font-size:13px;font-weight:500}.theme-toggle,.menu-toggle{width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.13);color:#fff;display:grid;place-items:center}.menu-toggle{display:none;background:transparent;border-radius:0}.menu-toggle span{display:block;width:22px;height:2px;grid-column:1;grid-row:1;border-radius:2px;background:#fff;transition:.2s}.menu-toggle span:nth-child(1){transform:translateY(-7px)}.menu-toggle span:nth-child(3){transform:translateY(7px)}.menu-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg)}.menu-toggle.open span:nth-child(2){opacity:0}.menu-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg)}
+.contact-hero{position:relative;min-height:770px;overflow:hidden;padding:66px 0 82px;background:var(--bg)}.circle-lines{position:absolute;width:555px;height:555px;left:-150px;top:38px;border:1px solid rgba(255,255,255,.055);border-radius:999px;box-shadow:0 0 0 11px rgba(255,255,255,.025),0 0 0 24px rgba(255,255,255,.021),0 0 0 37px rgba(255,255,255,.016),0 0 0 51px rgba(255,255,255,.012),0 0 0 67px rgba(255,255,255,.009)}body.light .circle-lines{border-color:rgba(0,0,0,.055);box-shadow:0 0 0 11px rgba(0,0,0,.025),0 0 0 24px rgba(0,0,0,.02),0 0 0 37px rgba(0,0,0,.015),0 0 0 51px rgba(0,0,0,.011),0 0 0 67px rgba(0,0,0,.008)}.contact-inner{position:relative;z-index:2}.contact-heading{max-width:610px;margin:0 auto;text-align:center}.contact-heading h1{font-size:38px;font-weight:900;line-height:1.17;letter-spacing:-.85px}.contact-heading p{margin-top:24px;color:var(--muted);font-size:17px;font-weight:600;line-height:1.55}.contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start;margin-top:78px}.contact-info{padding-left:76px}.email-line{display:inline-flex;align-items:center;gap:16px;color:var(--text);font-size:14px;font-weight:800}.email-line span{width:28px;height:20px;display:inline-grid;place-items:center;color:var(--blue);font-size:26px}.contact-figure{margin-top:62px}.contact-figure img{width:370px}.contact-form{width:412px;max-width:100%;display:grid;gap:15px}.contact-form label{display:grid;gap:7px;color:var(--muted);font-size:12px;font-weight:500}.contact-form em{color:#ff1f31;font-style:normal}.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--border);border-radius:2px;outline:0;background:var(--field);color:var(--text);font-size:14px;font-weight:500}.contact-form input{height:42px;padding:0 13px}.contact-form textarea{height:118px;padding:13px;resize:vertical}.contact-form input::placeholder,.contact-form textarea::placeholder{color:#8f98a7}.contact-form button{height:42px;margin-top:5px;border:0;border-radius:4px;background:var(--blue);color:#fff;font-size:14px;font-weight:500}
+.site-footer{min-height:282px;background:var(--panel);padding-top:52px}.footer-inner{display:grid;grid-template-columns:1.65fr .55fr .55fr .55fr;gap:70px}.footer-about p{max-width:500px;margin-top:27px;color:var(--muted);font-size:14px;font-weight:600;line-height:1.6}.footer-links h2{margin-bottom:32px;color:var(--text);font-size:18px;font-weight:800}.footer-links a{display:block;margin-bottom:15px;color:var(--muted);font-size:14px;font-weight:600}.footer-bottom{margin-top:36px;padding:16px 0 18px;border-top:1px solid rgba(255,255,255,.12)}body.light .footer-bottom{border-color:rgba(0,0,0,.12)}.footer-bottom p{color:var(--muted);font-size:12px;font-weight:500}.footer-bottom a{color:var(--blue)}
+.treasure-button{position:fixed;left:14px;bottom:18px;z-index:1200;width:70px;height:70px;padding:0;border:0;background:transparent;animation:treasureBounce 2.5s ease-in-out infinite}.treasure-button img{width:100%;height:100%;object-fit:contain}@keyframes treasureBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.bonus-modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.25)}.bonus-modal[hidden]{display:none}.bonus-panel{width:min(430px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:#000;box-shadow:0 16px 40px rgba(0,0,0,.25)}.bonus-panel header{height:49px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #e7e7e7}.bonus-panel h2{font-size:20px;font-weight:800}.bonus-panel header button{border:0;background:transparent;color:#000;font-size:24px;font-weight:600}.bonus-content{padding:13px 14px 22px;font-size:14px;font-weight:400;line-height:1.55}.bonus-content p{margin-bottom:8px}.bonus-content strong{font-weight:800}.back-to-top,.whatsapp{position:fixed;z-index:1100;display:grid;place-items:center;border-radius:50%;color:#fff}.back-to-top{right:24px;bottom:96px;width:44px;height:44px;background:var(--blue);opacity:0;pointer-events:none;transition:.2s}.back-to-top.show{opacity:1;pointer-events:auto}.whatsapp{right:18px;bottom:18px;width:60px;height:60px;border:5px solid #171d20;background:#18b94c;font-size:28px}.whatsapp::before{content:"We Are Here!";position:absolute;right:48px;top:-28px;color:#fff;font-size:13px;font-weight:800;white-space:nowrap;transform:rotate(-26deg)}body.light .whatsapp::before{color:#10141b}
+@media (max-width:1180px){:root{--container:930px}.main-nav{gap:22px}.nav-actions{gap:12px}.contact-grid{gap:46px}.contact-info{padding-left:35px}}
+@media (max-width:900px){:root{--header-h:54px}.container{width:calc(100% - 28px)}.main-nav,.language,.login,.signup-btn{display:none}.menu-toggle{display:grid}.main-nav.open{position:absolute;top:var(--header-h);left:14px;right:14px;display:grid;gap:16px;padding:20px;border-radius:12px;background:#000;color:#fff;box-shadow:0 18px 40px rgba(0,0,0,.32)}.brand{min-width:auto}.brand-cube{width:30px;height:34px}.brand-cube span{height:9px}.brand-text{font-size:13px}.contact-hero{min-height:auto;padding:52px 0 62px}.contact-heading h1{font-size:32px}.contact-heading p{font-size:15px}.contact-grid{grid-template-columns:1fr;gap:42px;margin-top:50px}.contact-info{padding-left:0;text-align:center}.email-line{justify-content:center}.contact-figure img{width:min(370px,100%);margin-inline:auto}.contact-form{width:100%}.footer-inner{grid-template-columns:1fr 1fr;gap:34px}}
+@media (max-width:560px){.contact-heading h1{font-size:28px}.contact-heading p{font-size:14px}.email-line{font-size:12px;gap:10px}.contact-form input,.contact-form textarea,.contact-form button{font-size:13px}.footer-inner{grid-template-columns:1fr}.treasure-button{width:62px;height:62px}.whatsapp{width:56px;height:56px;font-size:26px}.back-to-top{right:18px;bottom:86px}}
+
+
+/* Final contact-page refinements */
+.contact-heading {
+  max-width: 720px !important;
+}
+
+.contact-heading h1 {
+  white-space: nowrap !important;
+  text-align: center !important;
+  font-family: "Lexend", "Outfit", Arial, sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 900 !important;
+  letter-spacing: -1px !important;
+}
+
+/* Keep illustration line work visible on white mode. */
+body.light .contact-figure img {
+  filter: contrast(1.18) saturate(1.08) drop-shadow(0 0 0 rgba(0,0,0,.95));
+}
+
+/* Make the decorative line rings visible but still soft in light mode. */
+body.light .circle-lines {
+  border-color: rgba(0,0,0,.12) !important;
+  box-shadow:
+    0 0 0 11px rgba(0,0,0,.055),
+    0 0 0 24px rgba(0,0,0,.045),
+    0 0 0 37px rgba(0,0,0,.035),
+    0 0 0 51px rgba(0,0,0,.026),
+    0 0 0 67px rgba(0,0,0,.018) !important;
+}
+
+/* Standardized circular moon/sun toggle used across pages. */
+.theme-toggle i {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 760px) {
+  .contact-heading h1 {
+    white-space: normal !important;
+    font-size: 32px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-heading h1 {
+    font-size: 28px !important;
+  }
+}
+
+
+/* Global font + theme toggle consistency */
+body,
+button,
+input,
+textarea {
+  font-family: "Lexend", "Outfit", Arial, Helvetica, sans-serif !important;
+}
+
+.theme-toggle {
+  border-radius: 50% !important;
+}
+
+.theme-toggle i {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+
+/* Global font-weight update requested: default 400, h1 bold */
+*,
+*::before,
+*::after,
+body,
+a,
+button,
+input,
+textarea,
+select,
+label,
+p,
+span,
+li,
+div,
+section,
+article,
+nav,
+footer,
+header,
+small,
+strong,
+em,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400 !important;
+}
+
+h1 {
+  font-weight: 700 !important;
+}
+
+
+/* Final h1 font-weight update requested */
+h1 {
+  font-weight: 700 !important;
+}
+
+
+/* Requested navbar width/spacing and h1 sizing update */
+:root {
+  --container: 1220px !important;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 48px)) !important;
+}
+
+.nav-inner,
+.header-inner {
+  gap: 46px !important;
+}
+
+.main-nav,
+.primary-nav {
+  gap: 44px !important;
+}
+
+/* Add clear separation between Contact and the USA flag/action group */
+.nav-actions,
+.header-actions {
+  margin-left: 54px !important;
+  gap: 20px !important;
+}
+
+/* All h1 headings requested size */
+h1 {
+  font-size: 65.5289px !important;
+  line-height: 85.1876px !important;
+  font-weight: 700 !important;
+}
+
+/* Keep the first hero phrase on one straight line on desktop */
+.hero h1,
+.hero-content h1,
+#hero-title {
+  max-width: 780px !important;
+}
+
+.hero h1 {
+  white-space: normal !important;
+}
+
+@media (min-width: 901px) {
+  .hero h1,
+  .hero-content h1,
+  #hero-title {
+    font-size: 65.5289px !important;
+    line-height: 85.1876px !important;
+  }
+
+  .hero h1 span,
+  .hero-content h1 span,
+  #hero-title span {
+    font-size: 65.5289px !important;
+    line-height: 85.1876px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .nav-actions,
+  .header-actions {
+    margin-left: 28px !important;
+  }
+
+  .main-nav,
+  .primary-nav {
+    gap: 28px !important;
+  }
+
+  h1 {
+    font-size: 52px !important;
+    line-height: 68px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-actions,
+  .header-actions {
+    margin-left: 0 !important;
+  }
+
+  h1 {
+    font-size: 38px !important;
+    line-height: 49px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+}
+
+/* Final language dropdown + typography updates */
+.language-dropdown{position:relative;display:inline-flex;align-items:center}
+.language-toggle{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#fff;font-size:16px!important;line-height:24px!important;font-weight:400!important;padding:0}
+.language-toggle i{font-size:10px;transition:transform .2s ease}
+.language-dropdown.open .language-toggle i{transform:rotate(180deg)}
+.language-menu{position:absolute;top:calc(100% + 12px);left:0;z-index:1500;min-width:138px;padding:8px;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:#050505;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.language-menu button{width:100%;height:36px;display:flex;align-items:center;gap:8px;border:0;border-radius:6px;background:transparent;color:#fff;font-size:14px!important;line-height:22px!important;font-weight:400!important;text-align:left;padding:0 8px}
+.language-menu button:hover{background:rgba(0,123,255,.16)}
+body.light .language-toggle,body.light .language-menu button{color:#fff}
+@media (max-width:900px){.language-dropdown{display:none!important}}
+
+/* Requested contact heading typography */
+.contact-heading h1,#contact-title{font-size:46px!important;line-height:59px!important;font-weight:700!important}
+.contact-heading p{font-size:22px!important;line-height:30px!important}
+
+
+/* Final navbar language dropdown alignment and color */
+.language-dropdown {
+  position: relative !important;
+}
+
+.language-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: calc(100% + 10px) !important;
+  min-width: 142px !important;
+  padding: 6px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: 0 12px 28px rgba(0, 123, 255, .22) !important;
+  background: #007bff !important;
+  border-radius: 7px !important;
+}
+
+.language-menu::before,
+.language-menu::after {
+  display: none !important;
+  content: none !important;
+}
+
+.language-menu button {
+  justify-content: center !important;
+  background: #007bff !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 5px !important;
+}
+
+.language-menu button:hover,
+.language-menu button:focus-visible {
+  background: #0065d4 !important;
+  outline: 0 !important;
+}
+
+
+/* Font Awesome icon rendering fix */
+.fa,
+.fas,
+.fa-solid {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+.far,
+.fa-regular {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+}
+
+.fab,
+.fa-brands {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
+
+.fa::before,
+.fas::before,
+.fa-solid::before,
+.far::before,
+.fa-regular::before,
+.fab::before,
+.fa-brands::before {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+i.fa,
+i.fas,
+i.fa-solid,
+i.far,
+i.fa-regular,
+i.fab,
+i.fa-brands {
+  display: inline-block !important;
+  font-style: normal !important;
+  line-height: 1 !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+
+/* Trade hover dropdown */
+.trade-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.trade-toggle {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  padding: 0;
+  cursor: pointer;
+}
+
+.trade-menu {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  z-index: 2000;
+  width: 620px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 14px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: #111619;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+}
+
+.trade-dropdown:hover .trade-menu,
+.trade-dropdown:focus-within .trade-menu,
+.trade-dropdown.open .trade-menu {
+  display: grid !important;
+}
+
+.trade-card {
+  min-height: 98px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 19px 18px;
+  border-radius: 7px;
+  color: #101820 !important;
+  text-align: left;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.trade-card:hover,
+.trade-card:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .20);
+  outline: none;
+}
+
+.trade-card span {
+  display: grid;
+  gap: 7px;
+}
+
+.trade-card strong {
+  color: #101820 !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  font-weight: 700 !important;
+}
+
+.trade-card small {
+  max-width: 230px;
+  color: #101820 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  font-weight: 500 !important;
+}
+
+.trade-card i {
+  flex: 0 0 auto;
+  color: #152126 !important;
+  font-size: 37px !important;
+  line-height: 1 !important;
+  opacity: .9;
+}
+
+.trade-card-spot {
+  background: linear-gradient(135deg, #77dff1 0%, #91e5f8 100%);
+}
+
+.trade-card-p2p {
+  background: linear-gradient(135deg, #bbf79e 0%, #b5f99d 100%);
+}
+
+.trade-card-binary {
+  background: linear-gradient(135deg, #12aee2 0%, #18a9dc 100%);
+}
+
+.trade-card-future {
+  background: linear-gradient(135deg, #67f58b 0%, #61f490 100%);
+}
+
+/* keep menu open when JS removes hidden */
+.trade-menu:not([hidden]) {
+  display: grid !important;
+}
+
+.trade-menu[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .trade-dropdown {
+    width: 100%;
+    display: block;
+  }
+
+  .trade-toggle {
+    color: #ffffff !important;
+    text-align: left;
+  }
+
+  .trade-menu {
+    position: static;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 14px;
+    padding: 10px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .trade-card {
+    min-height: 86px;
+    padding: 16px;
+  }
+
+  .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+
+  .trade-card small {
+    font-size: 13px !important;
+    line-height: 20px !important;
+  }
+}
+
+
+/* Trade dropdown hover bridge + delayed movement support */
+.trade-dropdown::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  right: -28px;
+  top: 100%;
+  height: 28px;
+  display: block;
+}
+
+.trade-dropdown.open .trade-menu,
+.trade-dropdown:hover .trade-menu,
+.trade-dropdown:focus-within .trade-menu {
+  display: grid !important;
+}
+
+
+/* Mobile nav auth visibility update */
+@media (max-width: 900px) {
+  .main-nav.open .mobile-auth-links {
+    display: grid !important;
+  }
+
+  .mobile-auth-links {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+  }
+
+  .mobile-auth-links .mobile-login,
+  .mobile-auth-links .mobile-signup {
+    height: 42px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    font-weight: 400 !important;
+  }
+
+  .mobile-auth-links .mobile-login {
+    border: 1px solid rgba(255, 255, 255, .28);
+    color: #ffffff !important;
+    background: transparent;
+  }
+
+  .mobile-auth-links .mobile-signup {
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #ffffff !important;
+  }
+
+  .main-nav.open .login,
+  .main-nav.open .signup-btn {
+    display: inline-flex !important;
+  }
+}
+
+
+/* Mobile hamburger layout restored to match requested design */
+@media (max-width: 900px) {
+  .main-nav.open {
+    gap: 0 !important;
+    padding: 16px 18px 20px !important;
+  }
+
+  .mobile-auth-links {
+    display: none !important;
+  }
+
+  .mobile-menu-actions {
+    display: grid !important;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    column-gap: 18px;
+    width: 100%;
+    padding: 10px 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+  }
+
+  .mobile-language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    padding: 0;
+  }
+
+  .mobile-login {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .mobile-signup {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 78px;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 7px;
+    background: #007bff;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open > a,
+  .main-nav.open > .trade-dropdown {
+    width: 100%;
+    min-height: 43px;
+    display: flex !important;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open > a {
+    padding: 9px 0;
+  }
+
+  .main-nav.open > .trade-dropdown {
+    padding: 9px 0;
+  }
+
+  .main-nav.open .trade-toggle {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open .trade-menu {
+    margin-top: 12px;
+  }
+
+  body.light .main-nav.open,
+  body.light .main-nav.open a,
+  body.light .mobile-language,
+  body.light .mobile-login,
+  body.light .main-nav.open .trade-toggle {
+    color: #ffffff !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu-actions {
+    display: none !important;
+  }
+}
+
+
+/* Mobile Trade dropdown display/linking fix */
+@media (max-width: 900px) {
+  .main-nav.open > .trade-dropdown {
+    display: block !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+  }
+
+  .main-nav.open .trade-toggle {
+    width: 100% !important;
+    height: 43px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    padding: 9px 0 !important;
+  }
+
+  .main-nav.open .trade-toggle::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-toggle::after {
+    content: "−";
+  }
+
+  .main-nav.open .trade-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    display: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin: 0 0 14px !important;
+    padding: 10px 0 4px !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-menu,
+  .main-nav.open .trade-menu:not([hidden]) {
+    display: grid !important;
+  }
+
+  .main-nav.open .trade-card {
+    width: 100% !important;
+    min-height: 86px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+    border-radius: 7px !important;
+  }
+
+  .main-nav.open .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .main-nav.open .trade-card small {
+    max-width: 230px !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+    font-weight: 500 !important;
+  }
+
+  .main-nav.open .trade-card i {
+    font-size: 30px !important;
+  }
+
+  body.light .main-nav.open .trade-toggle,
+  body.light .main-nav.open .trade-toggle::after {
+    color: #ffffff !important;
+  }
+}
+
+
+/* FINAL mobile hamburger Trade + Crypto Currency fix */
+@media (max-width: 900px) {
+  .main-nav.open {
+    overflow: visible !important;
+  }
+
+  .main-nav.open > .trade-dropdown {
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+  }
+
+  .main-nav.open .trade-toggle {
+    width: 100% !important;
+    height: 43px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 9px 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+  }
+
+  .main-nav.open .trade-toggle::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-toggle::after {
+    content: "−";
+  }
+
+  .main-nav.open .trade-menu {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin: 0 0 14px 0 !important;
+    padding: 10px 0 5px !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .main-nav.open .trade-menu[hidden] {
+    display: none !important;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-menu {
+    display: grid !important;
+  }
+
+  .main-nav.open .trade-card {
+    width: 100% !important;
+    min-height: 86px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    padding: 16px !important;
+    border-radius: 7px !important;
+  }
+
+  .main-nav.open .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .main-nav.open .trade-card small {
+    max-width: 230px !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+    font-weight: 500 !important;
+  }
+
+  .main-nav.open .trade-card i {
+    font-size: 30px !important;
+  }
+
+  .main-nav.open a[href="cryptocurrency.html"] {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 43px !important;
+    align-items: center !important;
+    padding: 9px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+    color: #ffffff !important;
+  }
+}
+
+
+/* Final mobile Crypto Currency clickable row fix */
+@media (max-width: 900px) {
+  .main-nav.open a.mobile-crypto-link[href="cryptocurrency.html"] {
+    position: relative !important;
+    z-index: 5 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 43px !important;
+    align-items: center !important;
+    padding: 9px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open .trade-dropdown,
+  .main-nav.open .trade-menu,
+  .main-nav.open .mobile-menu-actions {
+    z-index: 3 !important;
+  }
+}

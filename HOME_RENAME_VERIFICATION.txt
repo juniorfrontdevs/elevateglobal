@@ -1,0 +1,7 @@
+Standard homepage filename verification:
+index.html: OK
+style.css: OK
+script.js: OK
+index.html links style.css: OK
+index.html links script.js: OK
+Leftover Home.* references: NONE

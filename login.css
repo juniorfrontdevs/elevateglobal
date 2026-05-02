@@ -1,0 +1,1233 @@
+:root {
+  --blue: #007bff;
+  --blue-panel: #087bff;
+  --page-bg: #000000;
+  --text: #ffffff;
+  --muted: #a8b1c1;
+  --field-bg: #000000;
+  --field-border: rgba(255, 255, 255, 0.23);
+}
+
+body.light {
+  --page-bg: #ffffff;
+  --text: #111827;
+  --muted: #5d6674;
+  --field-bg: #ffffff;
+  --field-border: rgba(0, 0, 0, 0.22);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Lexend", "Outfit", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Page layout */
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 639px minmax(0, 1fr);
+  background: #000000;
+}
+
+.login-visual {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 39px 0 0 89px;
+  background: var(--blue-panel);
+  color: #ffffff;
+}
+
+.login-panel {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 17px 42px 32px 232px;
+  background: var(--page-bg);
+}
+
+/* Brand */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 58px;
+  display: grid;
+  gap: 4px;
+}
+
+.brand-mark span {
+  height: 15px;
+  border-radius: 4px;
+  transform: skewY(-28deg);
+  background: linear-gradient(135deg, #18b9ff 0%, #087dff 52%, #004dbb 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.brand-copy {
+  display: grid;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+
+.brand-copy strong {
+  color: #4fb4ff;
+  font-weight: 400;
+}
+
+/* Left panel */
+.welcome-copy {
+  margin-top: 85px;
+}
+
+.welcome-copy p {
+  margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 25.5px;
+  font-weight: 400;
+}
+
+.welcome-copy h1 {
+  max-width: 405px;
+  font-size: 36px;
+  line-height: 1.48;
+  font-weight: 700;
+  letter-spacing: -0.65px;
+}
+
+.welcome-copy h1 span {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.welcome-copy h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 65px;
+  height: 4px;
+  background: #ffffff;
+}
+
+.login-illustration {
+  position: absolute;
+  left: 87px;
+  bottom: 20px;
+  width: 418px;
+}
+
+/* Top right */
+.login-topbar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.login-topbar > span {
+  color: var(--muted);
+}
+
+.signup-link {
+  color: var(--blue);
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+}
+
+/* Language dropdown */
+.language-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  z-index: 50;
+  min-width: 136px;
+  padding: 6px;
+  transform: translateX(-50%);
+  border-radius: 7px;
+  background: var(--blue);
+  box-shadow: 0 12px 28px rgba(0, 123, 255, 0.22);
+}
+
+.language-menu button {
+  width: 100%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.language-menu button:hover {
+  background: #0065d4;
+}
+
+.usa-flag {
+  position: relative;
+  width: 28px;
+  height: 18px;
+  display: inline-block;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+  background: repeating-linear-gradient(to bottom, #b22234 0 1.38px, #ffffff 1.38px 2.76px);
+}
+
+.flag-union {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12.5px;
+  height: 9.7px;
+  background: #3c3b6e;
+}
+
+/* Form */
+.form-card {
+  width: 432px;
+  margin-top: 116px;
+}
+
+.form-card h2 {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: 700;
+  letter-spacing: -0.55px;
+}
+
+.form-card > p {
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.login-form {
+  display: grid;
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.login-form label {
+  display: grid;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  height: 47px;
+  border: 1px solid var(--field-border);
+  border-radius: 3px;
+  outline: 0;
+  background: var(--field-bg);
+  color: var(--text);
+  padding: 0 14px;
+  font-size: 15px;
+}
+
+.login-form input::placeholder {
+  color: #9ba4b2;
+}
+
+.password-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-label a {
+  color: var(--blue);
+}
+
+.password-field {
+  position: relative;
+  display: block;
+}
+
+.password-field input {
+  padding-right: 48px !important;
+}
+
+.password-field button {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 16px;
+  transform: translateY(-50%);
+}
+
+.remember-row {
+  display: flex !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.remember-row input {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--blue);
+}
+
+.login-submit {
+  height: 46px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 16.5px;
+}
+
+.login-footer a {
+  color: var(--blue);
+}
+
+.login-footer nav {
+  display: flex;
+  gap: 4px;
+}
+
+/* Font Awesome fix */
+.fa,
+.fas,
+.fa-solid {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+.far,
+.fa-regular {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+  .login-page {
+    grid-template-columns: 45% 55%;
+  }
+
+  .login-visual {
+    padding-left: 50px;
+  }
+
+  .login-panel {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-visual {
+    min-height: 620px;
+    padding: 30px 24px 0;
+  }
+
+  .login-illustration {
+    left: 50%;
+    width: min(390px, 88vw);
+    transform: translateX(-50%);
+  }
+
+  .login-panel {
+    min-height: auto;
+    padding: 28px 24px 34px;
+  }
+
+  .login-topbar {
+    height: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .form-card {
+    width: 100%;
+    max-width: 520px;
+    margin: 50px auto 80px;
+  }
+
+  .login-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .welcome-copy {
+    margin-top: 50px;
+  }
+
+  .welcome-copy h1 {
+    font-size: 30px;
+  }
+
+  .form-card h2 {
+    font-size: 31px;
+  }
+}
+
+
+/* Login image size + mobile visibility update */
+.login-illustration {
+  width: 500px !important;
+  left: 70px !important;
+  bottom: 8px !important;
+}
+
+@media (min-width: 1181px) {
+  .login-illustration {
+    width: 530px !important;
+    left: 58px !important;
+    bottom: 4px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-visual {
+    display: none !important;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr !important;
+  }
+
+  .login-panel {
+    min-height: 100vh !important;
+    padding-top: 28px !important;
+  }
+}
+
+
+/* Final login illustration enlargement and bottom positioning */
+.login-illustration {
+  width: 590px !important;
+  left: 36px !important;
+  bottom: -18px !important;
+}
+
+@media (min-width: 1181px) {
+  .login-illustration {
+    width: 620px !important;
+    left: 24px !important;
+    bottom: -24px !important;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 901px) {
+  .login-illustration {
+    width: 560px !important;
+    bottom: -30px !important;
+  }
+}
+
+
+/* Final request: make login image touch the base of the left blue panel */
+.login-visual,
+.login-left {
+  overflow: hidden !important;
+}
+
+.login-illustration,
+.login-art {
+  bottom: 0 !important;
+}
+
+@media (min-width: 901px) {
+  .login-illustration,
+  .login-art {
+    width: 640px !important;
+    left: 12px !important;
+    bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1181px) {
+  .login-illustration,
+  .login-art {
+    width: 660px !important;
+    left: 0 !important;
+    bottom: 0 !important;
+  }
+}
+
+
+/* Final login illustration placement: touches blue-panel base, slightly reduced */
+.login-visual,
+.login-left {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.login-illustration,
+.login-art {
+  width: 520px !important;
+  left: 70px !important;
+  bottom: 0 !important;
+}
+
+@media (min-width: 1181px) {
+  .login-illustration,
+  .login-art {
+    width: 535px !important;
+    left: 72px !important;
+    bottom: 0 !important;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 901px) {
+  .login-illustration,
+  .login-art {
+    width: 500px !important;
+    left: 74px !important;
+    bottom: 0 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-visual,
+  .login-left {
+    display: none !important;
+  }
+}
+
+
+/* Login image final alignment based on supplied reference:
+   artwork sits on and touches the base of the blue panel */
+.login-visual,
+.login-left {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.login-illustration,
+.login-art {
+  width: 505px !important;
+  left: 82px !important;
+  bottom: -1px !important;
+  margin-bottom: 0 !important;
+  transform: none !important;
+}
+
+@media (min-width: 1181px) {
+  .login-illustration,
+  .login-art {
+    width: 515px !important;
+    left: 86px !important;
+    bottom: -1px !important;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 901px) {
+  .login-illustration,
+  .login-art {
+    width: 490px !important;
+    left: 84px !important;
+    bottom: -1px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-visual,
+  .login-left {
+    display: none !important;
+  }
+}
+
+
+/* Move login copyright text to the left side */
+.login-footer {
+  justify-content: flex-start !important;
+}
+
+.login-footer p {
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+.login-footer nav {
+  margin-left: auto !important;
+}
+
+
+/* Restore login footer copyright/legal links to previous spacing */
+.login-footer {
+  justify-content: space-between !important;
+}
+
+.login-footer p {
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+.login-footer nav {
+  margin-left: 0 !important;
+}
+
+
+/* Make auth page light/dark toggle visible on white background */
+body.light .theme-toggle {
+  background: rgba(0, 0, 0, 0.12) !important;
+  color: #111827 !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .theme-toggle i {
+  color: #111827 !important;
+}
+
+.theme-toggle i {
+  display: inline-block !important;
+  color: inherit !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+
+/* Trade hover dropdown */
+.trade-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.trade-toggle {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  padding: 0;
+  cursor: pointer;
+}
+
+.trade-menu {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  z-index: 2000;
+  width: 620px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 14px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: #111619;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+}
+
+.trade-dropdown:hover .trade-menu,
+.trade-dropdown:focus-within .trade-menu,
+.trade-dropdown.open .trade-menu {
+  display: grid !important;
+}
+
+.trade-card {
+  min-height: 98px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 19px 18px;
+  border-radius: 7px;
+  color: #101820 !important;
+  text-align: left;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.trade-card:hover,
+.trade-card:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .20);
+  outline: none;
+}
+
+.trade-card span {
+  display: grid;
+  gap: 7px;
+}
+
+.trade-card strong {
+  color: #101820 !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  font-weight: 700 !important;
+}
+
+.trade-card small {
+  max-width: 230px;
+  color: #101820 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  font-weight: 500 !important;
+}
+
+.trade-card i {
+  flex: 0 0 auto;
+  color: #152126 !important;
+  font-size: 37px !important;
+  line-height: 1 !important;
+  opacity: .9;
+}
+
+.trade-card-spot {
+  background: linear-gradient(135deg, #77dff1 0%, #91e5f8 100%);
+}
+
+.trade-card-p2p {
+  background: linear-gradient(135deg, #bbf79e 0%, #b5f99d 100%);
+}
+
+.trade-card-binary {
+  background: linear-gradient(135deg, #12aee2 0%, #18a9dc 100%);
+}
+
+.trade-card-future {
+  background: linear-gradient(135deg, #67f58b 0%, #61f490 100%);
+}
+
+/* keep menu open when JS removes hidden */
+.trade-menu:not([hidden]) {
+  display: grid !important;
+}
+
+.trade-menu[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .trade-dropdown {
+    width: 100%;
+    display: block;
+  }
+
+  .trade-toggle {
+    color: #ffffff !important;
+    text-align: left;
+  }
+
+  .trade-menu {
+    position: static;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 14px;
+    padding: 10px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .trade-card {
+    min-height: 86px;
+    padding: 16px;
+  }
+
+  .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+
+  .trade-card small {
+    font-size: 13px !important;
+    line-height: 20px !important;
+  }
+}
+
+
+/* Trade dropdown hover bridge + delayed movement support */
+.trade-dropdown::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  right: -28px;
+  top: 100%;
+  height: 28px;
+  display: block;
+}
+
+.trade-dropdown.open .trade-menu,
+.trade-dropdown:hover .trade-menu,
+.trade-dropdown:focus-within .trade-menu {
+  display: grid !important;
+}
+
+
+/* Mobile nav auth visibility update */
+@media (max-width: 900px) {
+  .main-nav.open .mobile-auth-links {
+    display: grid !important;
+  }
+
+  .mobile-auth-links {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+  }
+
+  .mobile-auth-links .mobile-login,
+  .mobile-auth-links .mobile-signup {
+    height: 42px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    font-weight: 400 !important;
+  }
+
+  .mobile-auth-links .mobile-login {
+    border: 1px solid rgba(255, 255, 255, .28);
+    color: #ffffff !important;
+    background: transparent;
+  }
+
+  .mobile-auth-links .mobile-signup {
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #ffffff !important;
+  }
+
+  .main-nav.open .login,
+  .main-nav.open .signup-btn {
+    display: inline-flex !important;
+  }
+}
+
+
+/* Mobile hamburger layout restored to match requested design */
+@media (max-width: 900px) {
+  .main-nav.open {
+    gap: 0 !important;
+    padding: 16px 18px 20px !important;
+  }
+
+  .mobile-auth-links {
+    display: none !important;
+  }
+
+  .mobile-menu-actions {
+    display: grid !important;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    column-gap: 18px;
+    width: 100%;
+    padding: 10px 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+  }
+
+  .mobile-language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    padding: 0;
+  }
+
+  .mobile-login {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .mobile-signup {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 78px;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 7px;
+    background: #007bff;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open > a,
+  .main-nav.open > .trade-dropdown {
+    width: 100%;
+    min-height: 43px;
+    display: flex !important;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open > a {
+    padding: 9px 0;
+  }
+
+  .main-nav.open > .trade-dropdown {
+    padding: 9px 0;
+  }
+
+  .main-nav.open .trade-toggle {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open .trade-menu {
+    margin-top: 12px;
+  }
+
+  body.light .main-nav.open,
+  body.light .main-nav.open a,
+  body.light .mobile-language,
+  body.light .mobile-login,
+  body.light .main-nav.open .trade-toggle {
+    color: #ffffff !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu-actions {
+    display: none !important;
+  }
+}
+
+
+/* Mobile Trade dropdown display/linking fix */
+@media (max-width: 900px) {
+  .main-nav.open > .trade-dropdown {
+    display: block !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+  }
+
+  .main-nav.open .trade-toggle {
+    width: 100% !important;
+    height: 43px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    padding: 9px 0 !important;
+  }
+
+  .main-nav.open .trade-toggle::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-toggle::after {
+    content: "−";
+  }
+
+  .main-nav.open .trade-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    display: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin: 0 0 14px !important;
+    padding: 10px 0 4px !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-menu,
+  .main-nav.open .trade-menu:not([hidden]) {
+    display: grid !important;
+  }
+
+  .main-nav.open .trade-card {
+    width: 100% !important;
+    min-height: 86px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+    border-radius: 7px !important;
+  }
+
+  .main-nav.open .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .main-nav.open .trade-card small {
+    max-width: 230px !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+    font-weight: 500 !important;
+  }
+
+  .main-nav.open .trade-card i {
+    font-size: 30px !important;
+  }
+
+  body.light .main-nav.open .trade-toggle,
+  body.light .main-nav.open .trade-toggle::after {
+    color: #ffffff !important;
+  }
+}
+
+
+/* FINAL mobile hamburger Trade + Crypto Currency fix */
+@media (max-width: 900px) {
+  .main-nav.open {
+    overflow: visible !important;
+  }
+
+  .main-nav.open > .trade-dropdown {
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+  }
+
+  .main-nav.open .trade-toggle {
+    width: 100% !important;
+    height: 43px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 9px 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+  }
+
+  .main-nav.open .trade-toggle::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-toggle::after {
+    content: "−";
+  }
+
+  .main-nav.open .trade-menu {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin: 0 0 14px 0 !important;
+    padding: 10px 0 5px !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .main-nav.open .trade-menu[hidden] {
+    display: none !important;
+  }
+
+  .main-nav.open .trade-dropdown.open .trade-menu {
+    display: grid !important;
+  }
+
+  .main-nav.open .trade-card {
+    width: 100% !important;
+    min-height: 86px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    padding: 16px !important;
+    border-radius: 7px !important;
+  }
+
+  .main-nav.open .trade-card strong {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .main-nav.open .trade-card small {
+    max-width: 230px !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+    font-weight: 500 !important;
+  }
+
+  .main-nav.open .trade-card i {
+    font-size: 30px !important;
+  }
+
+  .main-nav.open a[href="cryptocurrency.html"] {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 43px !important;
+    align-items: center !important;
+    padding: 9px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+    color: #ffffff !important;
+  }
+}
+
+
+/* Final mobile Crypto Currency clickable row fix */
+@media (max-width: 900px) {
+  .main-nav.open a.mobile-crypto-link[href="cryptocurrency.html"] {
+    position: relative !important;
+    z-index: 5 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 43px !important;
+    align-items: center !important;
+    padding: 9px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+  }
+
+  .main-nav.open .trade-dropdown,
+  .main-nav.open .trade-menu,
+  .main-nav.open .mobile-menu-actions {
+    z-index: 3 !important;
+  }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Elevate Global Markets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <main class="signup-page">
+    <section class="signup-visual" aria-label="New user rewards">
+      <a href="index.html" class="brand" aria-label="Back to homepage">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>Elevate</strong><span>Global Market</span></span>
+      </a>
+      <section class="reward-copy" aria-labelledby="reward-title">
+        <p>New User Rewards</p>
+        <h1 id="reward-title">Sign up to earn <span>$200</span><br />USDT</h1>
+      </section>
+      <img class="signup-illustration" src="assets/signup-illustration.png" alt="Crypto rewards illustration" />
+    </section>
+
+    <section class="signup-panel" aria-labelledby="signup-title">
+      <header class="signup-topbar">
+        <span>Already have an account?</span>
+        <a href="login.html" class="signin-link">Sign In</a>
+        <div class="language-dropdown">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-label="Select language">
+            <span class="usa-flag" aria-hidden="true"><span class="flag-union"></span></span>
+            <span>English</span>
+          </button>
+          <div class="language-menu" hidden>
+            <button type="button"><span class="usa-flag" aria-hidden="true"><span class="flag-union"></span></span>English</button>
+          </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light or dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </header>
+
+      <section class="form-card">
+        <h2 id="signup-title">Sign Up</h2>
+        <p>Join the community and unleash endless possibilities</p>
+        <form class="signup-form" id="signupForm">
+          <label><span>FullName <em>*</em></span><input type="text" name="fullname" placeholder="Your Full Name" required /></label>
+          <label><span>E-Mail Address <em>*</em></span><input type="email" name="email" placeholder="Your email" required /></label>
+          <label><span>Phone <em>*</em></span><input type="tel" name="phone" placeholder="Your Phone Number" required /></label>
+          <label><span>Currency <em>*</em></span><select name="currency" required><option value="">--- Select Currency ---</option><option value="USD">USD($)</option><option value="GBP">GBP(£)</option><option value="EUR">EUR(€)</option></select></label>
+          <div class="password-grid">
+            <label><span>Password <em>*</em></span><input id="passwordInput" type="password" name="password" placeholder="Your password" required /></label>
+            <label><span>Confirm Password <em>*</em></span><input id="confirmPasswordInput" type="password" name="confirmPassword" placeholder="Password Confirmation" required /></label>
+          </div>
+          <label class="agree-row"><input type="checkbox" required /><span>I agree with<br /><a href="privacy.html">Privacy Policy</a> , <a href="terms.html">Terms of Service</a> , <a href="cookies.html">Cookies Policy</a></span></label>
+          <button class="register-submit" type="submit">Register</button>
+        </form>
+      </section>
+
+      <footer class="signup-footer">
+        <p>© 2026 <a href="#">Elevate Global Markets.</a> All Rights Reserved</p>
+      </footer>
+    </section>
+  </main>
+  <script src="signup.js"></script>
+<script>
+(function () {
+  function setupMobileTradeDropdown() {
+    document.querySelectorAll('.trade-dropdown').forEach(function (dropdown) {
+      var toggle = dropdown.querySelector('.trade-toggle');
+      var menu = dropdown.querySelector('.trade-menu');
+      if (!toggle || !menu || dropdown.dataset.mobileReady === 'true') return;
+
+      dropdown.dataset.mobileReady = 'true';
+
+      function isMobile() {
+        return window.innerWidth <= 900;
+      }
+
+      function openMenu() {
+        dropdown.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        menu.hidden = false;
+      }
+
+      function closeMenu() {
+        dropdown.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+
+      toggle.addEventListener('click', function (event) {
+        if (!isMobile()) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        if (dropdown.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }, true);
+
+      dropdown.querySelectorAll('.trade-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          if (isMobile()) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (!isMobile()) closeMenu();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileTradeDropdown);
+  } else {
+    setupMobileTradeDropdown();
+  }
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('a.mobile-crypto-link[href="cryptocurrency.html"]').forEach(function (link) {
+    if (link.dataset.cryptoReady === 'true') return;
+    link.dataset.cryptoReady = 'true';
+
+    link.addEventListener('click', function (event) {
+      if (window.innerWidth <= 900) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = 'cryptocurrency.html';
+      }
+    }, true);
+  });
+})();
+</script>
+</body>
+</html>

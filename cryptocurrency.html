@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elevate Global Markets cryptocurrency page." />
+  <title>Cryptocurrency | Elevate Global Markets</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="cryptocurrency.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Elevate Global Market home">
+        <span class="brand-cube" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-text"><b>Elevate</b><br />Global Market</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <div class="mobile-menu-actions">
+          <button class="mobile-language" type="button" aria-label="Current language">
+            <span class="usa-flag" aria-hidden="true"><span class="flag-union"></span></span>
+            <span>English</span>
+          </button>
+          <a href="login.html" class="mobile-login">Login</a>
+          <a href="signup.html" class="mobile-signup">Sign up</a>
+        </div>
+        <a href="market.html">Market</a>
+        <div class="trade-dropdown">
+          <button class="trade-toggle" type="button" aria-expanded="false">Trade</button>
+          <div class="trade-menu" hidden>
+            <a href="#" class="trade-card trade-card-spot">
+              <span>
+                <strong>SPOT</strong>
+                <small>Trade smartly with necessary Spot market tools.</small>
+              </span>
+              <i class="fa-solid fa-chart-column"></i>
+            </a>
+
+            <a href="#" class="trade-card trade-card-p2p">
+              <span>
+                <strong>P2P</strong>
+                <small>Buy &amp; sell crypto with your preferred payment methods.</small>
+              </span>
+              <i class="fa-solid fa-users-gear"></i>
+            </a>
+
+            <a href="#" class="trade-card trade-card-binary">
+              <span>
+                <strong>Binary</strong>
+                <small>Binary trading predicts asset price changes over time.</small>
+              </span>
+              <i class="fa-solid fa-chart-line"></i>
+            </a>
+
+            <a href="#" class="trade-card trade-card-future">
+              <span>
+                <strong>Future</strong>
+                <small>Futures trading is predicting if prices go up or down.</small>
+              </span>
+              <i class="fa-solid fa-scale-balanced"></i>
+            </a>
+          </div>
+        </div>
+        <a href="cryptocurrency.html" class="mobile-crypto-link active">Crypto Currency</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a></nav>
+
+      <div class="nav-actions">
+        <div class="language-dropdown">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-label="Select language">
+            <span class="usa-flag" aria-hidden="true"><span class="flag-union"></span></span>
+            <span>English</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="language-menu" hidden>
+            <button type="button">
+              <span class="usa-flag" aria-hidden="true"><span class="flag-union"></span></span>
+              English
+            </button>
+          </div>
+        </div>
+        <a href="login.html" class="login">Login</a>
+        <a href="signup.html" class="signup-btn">Sign up</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="crypto-overview-section" aria-labelledby="crypto-title">
+      <div class="container">
+        <div class="crypto-heading-row">
+          <header class="crypto-heading">
+            <h1 id="crypto-title">Cryptocurrency</h1>
+            <p>Explore available Cryptocurrency on Elevate Global Markets</p>
+          </header>
+
+          <label class="top-search">
+            <input type="search" id="topSearch" placeholder="Search here ..." />
+          </label>
+        </div>
+
+        <div class="overview-grid">
+          <article class="overview-card exchange-card">
+            <h2>Top Exchanges Coin</h2>
+            <div class="empty-box" aria-label="No coin found">
+              <i class="fa-solid fa-box-open"></i>
+              <p>No coin found</p>
+            </div>
+          </article>
+
+          <article class="overview-card list-card">
+            <h2>Highlight Coin</h2>
+
+            <button class="coin-row" type="button" data-name="BTC">
+              <span class="coin-name"><span class="coin coin-btc"><i class="fa-brands fa-bitcoin"></i></span> BTC</span>
+              <span>$69,412.0300</span>
+              <span>1.2%</span>
+            </button>
+
+            <button class="coin-row" type="button" data-name="XRP">
+              <span class="coin-name"><span class="coin coin-xrp">X</span> XRP</span>
+              <span>$1.3600</span>
+              <span>0.2%</span>
+            </button>
+
+            <button class="coin-row" type="button" data-name="BNB">
+              <span class="coin-name"><span class="coin coin-bnb">B</span> BNB</span>
+              <span>$486.1567</span>
+              <span>0.34%</span>
+            </button>
+          </article>
+
+          <article class="overview-card list-card new-card">
+            <h2>New Coin</h2>
+
+            <button class="coin-row" type="button" data-name="BTC">
+              <span class="coin-name"><span class="coin coin-btc"><i class="fa-brands fa-bitcoin"></i></span> BTC</span>
+              <span>$69,412.0300</span>
+              <span>1.2%</span>
+            </button>
+
+            <button class="coin-row" type="button" data-name="ETH">
+              <span class="coin-name"><span class="coin coin-eth">◆</span> ETH</span>
+              <span>$2,007.5200</span>
+              <span>0.7%</span>
+            </button>
+
+            <button class="coin-row" type="button" data-name="XRP">
+              <span class="coin-name"><span class="coin coin-xrp">X</span> XRP</span>
+              <span>$1.3600</span>
+              <span>0.2%</span>
+            </button>
+
+            <button class="coin-row" type="button" data-name="BNB">
+              <span class="coin-name"><span class="coin coin-bnb">B</span> BNB</span>
+              <span>$486.1567</span>
+              <span>0.34%</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="crypto-table-section" aria-labelledby="crypto-table-title">
+      <div class="nodes-bg" aria-hidden="true"></div>
+
+      <div class="container table-inner">
+        <h2 class="visually-hidden" id="crypto-table-title">Cryptocurrency table</h2>
+
+        <div class="table-head" role="row">
+          <span role="columnheader">Crypto</span>
+          <span role="columnheader">Price</span>
+          <span role="columnheader">1h Change</span>
+          <span role="columnheader">24h Change</span>
+          <span role="columnheader">7d Change</span>
+          <span role="columnheader">Marketcap</span>
+        </div>
+
+        <div class="load-more-wrap">
+          <button class="load-more" type="button" id="loadMore">
+            <i class="fa-solid fa-spinner"></i> Load More
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <section class="footer-about">
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-cube" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-text"><b>Elevate</b><br />Global Market</span>
+        </a>
+        <p>We're passionate about creating unforgettable moments. Our platform provides a seamless and transparent trading experience, with a range of exciting crypto and fiat currency</p>
+      </section>
+
+      <nav class="footer-links" aria-label="Quick links">
+        <h2>Quick Links</h2>
+        <a href="index.html#trade">Trade</a>
+        <a href="market.html">Market</a>
+        <a href="cryptocurrency.html" class="mobile-crypto-link">Crypto Currency</a>
+      </nav>
+
+      <nav class="footer-links" aria-label="Company links">
+        <h2>Company</h2>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <nav class="footer-links" aria-label="Legal links">
+        <h2>Legal</h2>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 <a href="#">Elevate Global Markets.</a> All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <button class="treasure-button" id="treasureButton" type="button" aria-label="Open bonus reward">
+    <img src="assets/treasure.png" alt="Treasure bonus" />
+  </button>
+
+  <div class="bonus-modal" id="bonusModal" role="dialog" aria-modal="true" aria-labelledby="bonusTitle" hidden>
+    <article class="bonus-panel">
+      <header>
+        <h2 id="bonusTitle">🎁 Bonus</h2>
+        <button id="closeBonus" type="button" aria-label="Close bonus popup">×</button>
+      </header>
+
+      <div class="bonus-content">
+        <p><strong>Here is your gift! Enjoy!</strong></p>
+        <p>Deposit now and get free funds!!</p>
+
+        <p>🎁 Elevate Global Markets platform new user bonus and Cashback!</p>
+        <p>200 USDT → Get 5 USDT</p>
+        <p>500 USDT → Get 15 USDT</p>
+        <p>1000 USDT → Get 40 USDT</p>
+        <p>2000 USDT → Get 100 USDT</p>
+
+        <p>🎁 Elevate Global Markets platform VIPs enjoy experience bonus!</p>
+        <p><strong>Membership card (minimum single recharge of 3000 USDT):</strong></p>
+        <p>3000 USDT → Get 500 USDT</p>
+        <p>5000 USDT → Get 1000 USDT</p>
+        <p>10000 USDT → Get 2500 USDT</p>
+
+        <p><strong>VIP card (accumulative recharge above 20,000 USDT):</strong></p>
+        <p>20,000 USDT → Get 3000 USDT</p>
+        <p>50,000 USDT → Get 10,000 USDT</p>
+        <p>100,000 USDT → Get 25,000 USDT</p>
+
+        <p><strong>VIP card (accumulative recharge above 150,000 USDT):</strong></p>
+        <p>150,000 USDT → Get 35,000 USDT</p>
+        <p>200,000 USDT → Get 50,000 USDT</p>
+      </div>
+    </article>
+  </div>
+
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <a href="#" class="whatsapp" aria-label="Chat support">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="cryptocurrency.js"></script>
+<script>
+(function () {
+  function setupMobileTradeDropdown() {
+    document.querySelectorAll('.trade-dropdown').forEach(function (dropdown) {
+      var toggle = dropdown.querySelector('.trade-toggle');
+      var menu = dropdown.querySelector('.trade-menu');
+      if (!toggle || !menu || dropdown.dataset.mobileReady === 'true') return;
+
+      dropdown.dataset.mobileReady = 'true';
+
+      function isMobile() {
+        return window.innerWidth <= 900;
+      }
+
+      function openMenu() {
+        dropdown.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        menu.hidden = false;
+      }
+
+      function closeMenu() {
+        dropdown.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+
+      toggle.addEventListener('click', function (event) {
+        if (!isMobile()) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        if (dropdown.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }, true);
+
+      dropdown.querySelectorAll('.trade-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          if (isMobile()) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (!isMobile()) closeMenu();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileTradeDropdown);
+  } else {
+    setupMobileTradeDropdown();
+  }
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('a.mobile-crypto-link[href="cryptocurrency.html"]').forEach(function (link) {
+    if (link.dataset.cryptoReady === 'true') return;
+    link.dataset.cryptoReady = 'true';
+
+    link.addEventListener('click', function (event) {
+      if (window.innerWidth <= 900) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = 'cryptocurrency.html';
+      }
+    }, true);
+  });
+})();
+</script>
+</body>
+</html>
